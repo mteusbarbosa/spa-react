@@ -1,6 +1,7 @@
+import { differenceInSeconds } from 'date-fns'
 import {
-  ReactNode,
   createContext,
+  ReactNode,
   useEffect,
   useReducer,
   useState,
@@ -11,7 +12,6 @@ import {
   markCurrentCycleAsFinishedAction,
 } from '../reducers/cycles/actions'
 import { cyclesReducer, Cycle } from '../reducers/cycles/reducer'
-import { differenceInSeconds } from 'date-fns'
 
 interface CreateCycleData {
   task: string
@@ -56,6 +56,7 @@ export function CyclesContextProvider({
       return initialState
     },
   )
+
   const { cycles, activeCycleId } = cyclesState
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
 

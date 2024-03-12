@@ -10,8 +10,8 @@ import {
   StopCountdownButton,
 } from './styles'
 
-import Countdown from './components/Countdown'
 import NewCycleForm from './components/NewCycleForm'
+import Countdown from './components/Countdown'
 import { CyclesContext } from '../../Contexts/CyclesContext'
 
 const newCycleFormValidationSchema = zod.object({
@@ -48,7 +48,7 @@ export function Home() {
 
   return (
     <HomeContainer>
-      <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
+      <form onSubmit={handleSubmit(handleCreateNewCycle)}>
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
